@@ -30,13 +30,5 @@ class Task():
             status=" "
         return f"[{status}]  {self.title}"
     
-    
-task = Task("Buy milk")
-print(task)
-task.mark_done()
-print(task.completed)
-print(task)
-    
-    
 
         
