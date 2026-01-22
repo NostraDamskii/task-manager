@@ -14,4 +14,15 @@ class TaskManager():
             string_list.append(str(task))
         return string_list
     
+    def remove_task(self,index):
+        if index <0 or index>=len(self._tasks):
+            raise IndexError("Wrong index for remove")
+        #self._tasks.remove(self._tasks[index])
+        self._tasks.pop(index)
+
+    def mark_task_done(self,index):
+        if index <0 or index>=len(self._tasks):
+            raise IndexError("Wrong index for mark")
+        self._tasks[index].mark_done()
+
 
