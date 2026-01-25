@@ -38,7 +38,7 @@ task_manager/
 ├── main.py         # CLI интерфейс
 ├── data.json       # файл с задачами
 └── README.md
-
+```
 ---
 
 ## Доступные команды
