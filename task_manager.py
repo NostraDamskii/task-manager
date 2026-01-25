@@ -1,4 +1,6 @@
 from task import Task
+import json
+import os.path
 
 class TaskManager():
     def __init__(self):
@@ -26,3 +28,26 @@ class TaskManager():
         self._tasks[index].mark_done()
 
 
+    def save_to_file(self,filename):
+        data=[]
+        for task in self._tasks:
+            data.append({"title": task.title, "completed":task.completed})
+
+        with open (filename,"w", encoding="utf-8") as file:
+            json.dump(data,file,ensure_ascii=False, indent=2)
+
+    def load_from_file(self, filename):
+        self._tasks=[]
+        try:
+            with open(filename, encoding="utf-8") as file:
+                data=json.load(file)
+            for item in data:
+                task=Task(item.get("title"))
+                if item.get("completed"):
+                    task.mark_done()
+                self._tasks.append(task)
+
+        except FileNotFoundError:
+            self._tasks=[]
+        
+ 
