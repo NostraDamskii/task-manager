@@ -7,7 +7,7 @@ def main():
         command = input("Enter command: ").strip().lower()
 
         if command == "add":
-            new_task=input("Enter yor task")
+            new_task=input("Enter yor task").strip()
             try:
                 manager.add_task(new_task)
             except ValueError:
@@ -21,7 +21,7 @@ def main():
             task_index=input("Which task did you complete? Type index")
             try:
                 manager.mark_task_done(int(task_index))
-                print(f"Task done")
+                print("Task marked as done ✔")
             except IndexError:
                 print("Wrong index!")
             except ValueError:
