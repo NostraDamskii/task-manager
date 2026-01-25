@@ -1,11 +1,19 @@
 from task_manager import TaskManager
+import json
 
 def main():
     manager = TaskManager()
+    try:
+        manager.load_from_file("data.json")
+        print("Tasks loaded ✔")
+    except (FileNotFoundError, json.JSONDecodeError):
+        print("Could not load tasks file, starting with empty list")
+
+
 
     while True:
         command = input("Enter command: ").strip().lower()
-
+        
         if command == "add":
             new_task=input("Enter yor task").strip()
             try:
@@ -37,9 +45,11 @@ def main():
                 print("Index should be an integer ")
         elif command == "exit":
             print("Program end")
+            manager.save_to_file("data.json")
             break
         else:
             print("Unknown command")
+        
 
 if __name__ == "__main__":
     main()
