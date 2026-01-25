@@ -49,3 +49,47 @@ task_manager/
 - done — отметить задачу выполненной
 - remove — удалить задачу
 - exit — сохранить задачи и выйти
+
+---
+
+## ▶ Запуск
+
+```bash
+git clone https://github.com/username/task-manager.git
+cd task-manager
+python main.py
+```
+
+---
+
+## Пример использования 
+
+
+## Пример работы
+```code
+Enter command: add  
+Enter your task: Buy milk  
+
+Enter command: list  
+0. Task Buy milk is False  
+
+Enter command: done  
+Task marked as done ✔
+```
+---
+
+## Чему я научилась
+
+- Использовать @property и инкапсуляцию
+- Разделять проект на модули
+- Работать с JSON для сохранения данных
+- Использовать Git для контроля версий
+- Обрабатывать исключения
+
+---
+
+## 🚀 Возможные улучшения
+
+- Добавить дедлайны задач
+- Сохранение при каждом изменении
+- GUI или веб-интерфейс
