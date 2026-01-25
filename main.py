@@ -15,7 +15,7 @@ def main():
         command = input("Enter command: ").strip().lower()
         
         if command == "add":
-            new_task=input("Enter yor task").strip()
+            new_task=input("Enter yor task: ").strip()
             try:
                 manager.add_task(new_task)
             except ValueError:
@@ -26,7 +26,7 @@ def main():
             for i,task in enumerate(manager.list_tasks()):
                 print(f"{i}. {task}")
         elif command == "done":
-            task_index=input("Which task did you complete? Type index")
+            task_index=input("Which task did you complete? Type index: ")
             try:
                 manager.mark_task_done(int(task_index))
                 print("Task marked as done ✔")
@@ -35,7 +35,7 @@ def main():
             except ValueError:
                 print("Index should be an integer ")
         elif command == "remove":
-            task_index=input("Which task do you want to remove? Type index")
+            task_index=input("Which task do you want to remove? Type index: ")
             try:
                 manager.remove_task(int(task_index))
                 print(f"Task removed")

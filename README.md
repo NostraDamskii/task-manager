@@ -71,10 +71,15 @@ Enter command: add
 Enter your task: Buy milk  
 
 Enter command: list  
-0. Task Buy milk is False  
+0. [] Buy milk 
 
 Enter command: done  
+Which task did you complete? Type index: 0
 Task marked as done ✔
+
+Enter command: list  
+0. [✔] Buy milk 
+
 ```
 ---
 
